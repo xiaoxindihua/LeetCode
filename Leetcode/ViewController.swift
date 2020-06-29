@@ -14,13 +14,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
 
+        let n = 4421
+        let b = subtractProductAndSum(n)
 
-//        let s = "lrloseumgh", k = 6
-//        "umghlrlose"
-        let s = "abcdefg", k = 2
-//"cdefgab"
-        let a = self.reverseLeftWords(s, k)
+    }
 
+
+//    1281. 整数的各位积和之差
+    func subtractProductAndSum(_ n: Int) -> Int {
+        var plus = 1
+        var sum = 0
+        for c in String(n) {
+            plus *= Int(c.description)!
+            sum += Int(c.description)!
+        }
+        return plus - sum
     }
 
 
