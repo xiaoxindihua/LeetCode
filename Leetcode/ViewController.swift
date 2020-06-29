@@ -15,13 +15,20 @@ class ViewController: UIViewController {
 
 
 
-        var nums = [0,1,0,3,12,0,0,0]
-
-        let r = self.removeElement(&nums, 0)
+//        let s = "lrloseumgh", k = 6
+//        "umghlrlose"
+        let s = "abcdefg", k = 2
+//"cdefgab"
+        let a = self.reverseLeftWords(s, k)
 
     }
 
 
+//    剑指 Offer 58 - II. 左旋转字符串
+    func reverseLeftWords(_ s: String, _ n: Int) -> String {
+
+        return String(s.suffix(s.count - n)) + String(s.prefix(n))
+    }
 
 //    27. 移除元素
     func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
