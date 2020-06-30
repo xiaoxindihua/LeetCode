@@ -14,10 +14,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
 
-        let n = 4421
-        let b = subtractProductAndSum(n)
+        let n = [2,7,4,1,8,1]
+        let b = lastStoneWeight(n)
 
     }
+
+
+//    1046. 最后一块石头的重量
+    func lastStoneWeight(_ stones: [Int]) -> Int {
+        var st = stones.sorted()
+        while st.count >= 2 {
+            st = st.sorted()
+            let a = st.popLast()!
+            let b = st.popLast()!
+            st.append(a-b)
+        }
+        return st[0]
+    }
+
 
 
 //    1281. 整数的各位积和之差
