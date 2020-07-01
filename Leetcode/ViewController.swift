@@ -14,9 +14,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
 
-        let n = [2,7,4,1,8,1]
-        let b = lastStoneWeight(n)
+        let n = " ";
+        let b = lengthOfLastWord(n)
 
+    }
+
+
+
+//    58. 最后一个单词的长度
+    func lengthOfLastWord(_ s: String) -> Int {
+        return s.split(separator: " ").count > 0 ? s.split(separator: " ")[s.split(separator: " ").count-1].count : 0
     }
 
 
