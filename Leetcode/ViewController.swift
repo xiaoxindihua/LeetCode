@@ -14,11 +14,28 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
 
-        let n = " ";
-        let b = lengthOfLastWord(n)
+        let nums = [7,7,7,7]
+        let b = smallerNumbersThanCurrent(nums)
 
     }
 
+//    1365. 有多少小于当前数字的数字
+    func smallerNumbersThanCurrent(_ nums: [Int]) -> [Int] {
+
+        var result:[Int] = []
+        for i in 0..<nums.count{
+            var count = 0
+            for j in 0..<nums.count{
+                if nums[i]>nums[j]{
+                    count += 1
+                } else {
+                    count += 0
+                }
+            }
+            result.append(count)
+        }
+        return result;
+    }
 
 
 //    58. 最后一个单词的长度
