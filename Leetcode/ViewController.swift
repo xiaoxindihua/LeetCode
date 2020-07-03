@@ -14,10 +14,35 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
 
-        let nums = [7,7,7,7]
-        let b = smallerNumbersThanCurrent(nums)
+        let moves = "LL"
+        let b = judgeCircle(moves)
 
     }
+
+//    657. 机器人能否返回原点
+    func judgeCircle(_ moves: String) -> Bool {
+
+        var x = 0, y = 0
+        for move in moves {
+            switch move {
+            case "U":
+                x += 1
+            case "D":
+                x -= 1
+            case "R":
+                y += 1
+            case "L":
+                y -= 1
+            default:
+                break
+            }
+        }
+        return (x == 0 && y == 0) ? true : false
+
+    }
+
+
+
 
 //    1365. 有多少小于当前数字的数字
     func smallerNumbersThanCurrent(_ nums: [Int]) -> [Int] {
