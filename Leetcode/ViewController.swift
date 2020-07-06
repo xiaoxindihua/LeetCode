@@ -8,6 +8,17 @@
 
 import UIKit
 
+public class TreeNode {
+      public var val: Int
+      public var left: TreeNode?
+      public var right: TreeNode?
+      public init(_ val: Int) {
+          self.val = val
+          self.left = nil
+          self.right = nil
+      }
+  }
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -16,6 +27,16 @@ class ViewController: UIViewController {
 
         let moves = "LL"
         let b = judgeCircle(moves)
+
+    }
+
+//    104. 二叉树的最大深度
+    func maxDepth(_ root: TreeNode?) -> Int {
+        if (root != nil) {
+            return max(maxDepth(root?.left), maxDepth(root?.right))
+        } else {
+            return 0
+        }
 
     }
 
