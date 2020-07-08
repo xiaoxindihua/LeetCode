@@ -25,8 +25,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
 
-        let moves = "LL"
-        let b = judgeCircle(moves)
+        let A = [-7,-3,2,3,11]
+        let b = sortedSquares(A)
+
+    }
+
+//    977. 有序数组的平方
+    func sortedSquares(_ A: [Int]) -> [Int] {
+        var b :[Int] = []
+        for i in A {
+            b.append(i*i)
+        }
+        return b.sorted()
 
     }
 
